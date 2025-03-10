@@ -51,9 +51,9 @@
       background-color: #ffa726; /* Naranja */
       border: none;
       border-radius: 8px;
-      padding: 0.4em 0.8em;
+      padding: 0.5em 1em;
       cursor: pointer;
-      font-size: 0.9em;
+      font-size: 1em; /* Botones del menú un poco más grandes */
       color: #333;
       margin: 0.2em;
     }
@@ -85,9 +85,7 @@
       background-color: #ffa726;
       border: none;
       border-radius: 8px;
-      padding: 0.5em 1em;
       cursor: pointer;
-      font-size: 0.85em;
       color: #333;
       margin: 0.3em;
     }
@@ -109,7 +107,7 @@
       margin-bottom: 0.5em;
     }
     .draggable {
-      width: 110px;
+      min-width: 110px;
       min-height: 40px;
       background-color: #c5e1a5; /* Verde claro */
       border-radius: 6px;
@@ -121,11 +119,12 @@
       cursor: move;
       user-select: none;
       text-align: center;
-      font-size: 0.8em;
-      padding: 0.3em;
+      /* Botón más grande en arrastre */
+      font-size: 1em;
+      padding: 0.5em 1em;
     }
     .drop-zone {
-      width: 140px;
+      width: 150px;
       min-height: 60px;
       border: 3px dashed #26c6da; /* Azul */
       border-radius: 10px;
@@ -137,8 +136,8 @@
       font-weight: bold;
       color: #00796b;
       text-align: center;
-      font-size: 0.8em;
-      padding: 0.5em;
+      font-size: 1em;
+      padding: 0.6em;
     }
 
     /* TABLAS - ancho completo en móvil */
@@ -162,14 +161,14 @@
     textarea {
       border: 2px solid #ccc;
       border-radius: 5px;
-      font-size: 0.9em;
-      padding: 0.3em 0.5em;
+      font-size: 1em; /* Más grande para mobile */
+      padding: 0.4em 0.6em;
       margin: 0.3em 0;
       width: 90%;
       max-width: 100%;
     }
     textarea {
-      height: 50px;
+      height: 60px;
       resize: vertical;
     }
 
@@ -188,7 +187,7 @@
       font-size: 1em;
     }
     .card p {
-      font-size: 0.9em;
+      font-size: 0.95em;
       text-align: center;
     }
     .card .options-row {
@@ -199,15 +198,16 @@
       margin-top: 0.5em;
     }
     .card .options-row button {
+      /* Botones de opción múltiple más grandes */
       margin: 0; 
-      font-size: 0.8em;
-      padding: 0.4em 0.7em;
+      font-size: 1em; 
+      padding: 0.6em 1em; 
     }
 
     .result-msg {
       margin-top: 0.5em;
       font-weight: bold;
-      font-size: 0.9em;
+      font-size: 0.95em;
       text-align: center;
     }
 
@@ -245,15 +245,15 @@
   </nav>
 
   <div class="container">
-    
-    <!-- PÁGINA 1 -->
+
+    <!-- PÁGINA 1: Oficios vs Profesiones -->
     <section id="page1" class="activity-page">
       <div class="activity">
         <h2>1. Oficios vs Profesiones</h2>
 
-        <!-- Definición (opción múltiple) -->
+        <!-- Definición con opción múltiple -->
         <div class="card">
-          <h3>Definición: ¿Cuál describe mejor “Oficios”?</h3>
+          <h3>Definición: ¿Cuál describe mejor “Oficios”? <span>🛠</span></h3>
           <p>Elige la opción correcta</p>
           <div class="options-row">
             <button onclick="checkAnswer('res1a','¡Correcto! 🎉',true)">Requieren habilidades prácticas</button>
@@ -276,11 +276,12 @@
         </div>
 
         <div class="drag-container" style="margin-top:0.5em;">
+          <!-- Con emojis -->
           <div class="draggable" draggable="true" data-category="oficio">🔨 Carpintero</div>
           <div class="draggable" draggable="true" data-category="oficio">🔧 Plomero</div>
           <div class="draggable" draggable="true" data-category="profesion">👨‍⚕️ Doctor</div>
           <div class="draggable" draggable="true" data-category="profesion">👩‍🏫 Maestra</div>
-          <div class="draggable" draggable="true" data-category="oficio">🚓 Policía</div>
+          <div class="draggable" draggable="true" data-category="oficio">👮 Policía</div>
           <div class="draggable" draggable="true" data-category="profesion">👷 Arquitecto</div>
         </div>
       </div>
@@ -289,13 +290,13 @@
       </div>
     </section>
 
-    <!-- PÁGINA 2 -->
+    <!-- PÁGINA 2: Oficios antes y ahora -->
     <section id="page2" class="activity-page">
       <div class="activity">
         <h2>2. Oficios de antes y de ahora</h2>
 
         <div class="card">
-          <h3>Definición: ¿Qué es un “oficio antiguo”?</h3>
+          <h3>Definición: ¿Qué es un “oficio antiguo”? <span>⏳</span></h3>
           <p>Elige la opción correcta</p>
           <div class="options-row">
             <button onclick="checkAnswer('res2a','¡Correcto! 🎉',true)">Uno que ha desaparecido o es muy poco común</button>
@@ -317,7 +318,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 3 -->
+    <!-- PÁGINA 3: Identifica el oficio -->
     <section id="page3" class="activity-page">
       <div class="activity">
         <h2>3. Identifica el oficio</h2>
@@ -333,11 +334,10 @@
           <div id="res3def" class="result-msg"></div>
         </div>
 
-        <p>Da clic en la opción correcta:</p>
-
+        <p>Da clic en la opción correcta (tarjetas):</p>
         <!-- Tarjeta 1 -->
         <div class="card">
-          <h3>¿Quién construye muebles de madera?</h3>
+          <h3>¿Quién construye muebles de madera? <span>🪑</span></h3>
           <div class="options-row">
             <button onclick="checkAnswer('q3_1','No, hace pan.',false)">Panadero</button>
             <button onclick="checkAnswer('q3_1','¡Correcto! 🎉',true)">Carpintero</button>
@@ -348,7 +348,7 @@
 
         <!-- Tarjeta 2 -->
         <div class="card">
-          <h3>¿Quién hornea panes y pasteles?</h3>
+          <h3>¿Quién hornea panes y pasteles? <span>🍞</span></h3>
           <div class="options-row">
             <button onclick="checkAnswer('q3_2','No, arregla tuberías.',false)">Plomero</button>
             <button onclick="checkAnswer('q3_2','¡Correcto! 🎉',true)">Panadero</button>
@@ -363,7 +363,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 4 -->
+    <!-- PÁGINA 4: ¿Qué me gusta...? -->
     <section id="page4" class="activity-page">
       <div class="activity">
         <h2>4. ¿Qué me gusta y qué me disgusta?</h2>
@@ -411,7 +411,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 5 (antes 6) -->
+    <!-- PÁGINA 5 (antes 6): Describimos con adjetivos -->
     <section id="page5" class="activity-page">
       <div class="activity">
         <h2>5. ¡Describimos con adjetivos!</h2>
@@ -465,7 +465,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 6 (antes 7) -->
+    <!-- PÁGINA 6 (antes 7): Emojis -->
     <section id="page6" class="activity-page">
       <div class="activity">
         <h2>6. Observa los emojis</h2>
@@ -521,7 +521,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 7 (antes 8) - DRAG & DROP de fiestas de pueblo vs ciudad (ACTUALIZADO) -->
+    <!-- PÁGINA 7 (antes 8): DRAG & DROP Fiestas -->
     <section id="page7" class="activity-page">
       <div class="activity">
         <h2>7. Fiestas de pueblo y de ciudad</h2>
@@ -543,17 +543,17 @@
 
           <p style="margin:0.6em 0;">Opciones a arrastrar:</p>
           <div class="drag-container">
-            <!-- Fiestas de Pueblo (data-category="pueblo") -->
-            <div class="draggable" draggable="true" data-category="pueblo">Vaqueria</div>
-            <div class="draggable" draggable="true" data-category="pueblo">Hanal Pixán</div>
-            <div class="draggable" draggable="true" data-category="pueblo">Semana Santa</div>
-            <div class="draggable" draggable="true" data-category="pueblo">Carnaval</div>
+            <!-- Fiestas de Pueblo -->
+            <div class="draggable" draggable="true" data-category="pueblo">🤠 Vaqueria</div>
+            <div class="draggable" draggable="true" data-category="pueblo">💀 Hanal Pixán</div>
+            <div class="draggable" draggable="true" data-category="pueblo">✝️ Semana Santa</div>
+            <div class="draggable" draggable="true" data-category="pueblo">🎊 Carnaval</div>
 
-            <!-- Fiestas de Ciudad (data-category="ciudad") -->
-            <div class="draggable" draggable="true" data-category="ciudad">Navidad</div>
-            <div class="draggable" draggable="true" data-category="ciudad">Ferias</div>
-            <div class="draggable" draggable="true" data-category="ciudad">Conciertos</div>
-            <div class="draggable" draggable="true" data-category="ciudad">Día del niño</div>
+            <!-- Fiestas de Ciudad -->
+            <div class="draggable" draggable="true" data-category="ciudad">🎄 Navidad</div>
+            <div class="draggable" draggable="true" data-category="ciudad">🎡 Ferias</div>
+            <div class="draggable" draggable="true" data-category="ciudad">🎶 Conciertos</div>
+            <div class="draggable" draggable="true" data-category="ciudad">👧👦 Día del niño</div>
           </div>
         </div>
 
@@ -618,8 +618,6 @@
         </div>
 
         <p>Completa cada oración:</p>
-
-        <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Oración 1</h3>
           <p>___ Quieres ir al carnaval ___</p>
@@ -631,7 +629,6 @@
           <div id="r9_1" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <h3>Oración 2</h3>
           <p>___ Qué padre está el carnaval ___</p>
@@ -643,7 +640,6 @@
           <div id="r9_2" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="card">
           <h3>Oración 3</h3>
           <p>___ Iremos al zócalo el 15 de septiembre ___</p>
@@ -655,7 +651,6 @@
           <div id="r9_3" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 4 -->
         <div class="card">
           <h3>Oración 4</h3>
           <p>___ Qué celebramos el 16 de septiembre ___</p>
@@ -673,7 +668,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 10 (antes 11) -->
+    <!-- PÁGINA 10 (antes 11): Sonidos qu, ch, gu, gü -->
     <section id="page10" class="activity-page">
       <div class="activity">
         <h2>10. Sonidos: qu, ch, gu, gü</h2>
@@ -690,7 +685,6 @@
         </div>
 
         <p>Elige la opción correcta:</p>
-        <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Pregunta 1</h3>
           <p>¿Cuál de estas palabras usa <strong>qu</strong>?</p>
@@ -702,7 +696,6 @@
           <div id="q10_1" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <h3>Pregunta 2</h3>
           <p>¿Cuál de estas usa <strong>ch</strong>?</p>
@@ -714,7 +707,6 @@
           <div id="q10_2" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="card">
           <h3>Pregunta 3</h3>
           <p>¿Cuál lleva diéresis <strong>ü</strong>?</p>
@@ -726,7 +718,6 @@
           <div id="q10_3" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 4 -->
         <div class="card">
           <h3>Pregunta 4</h3>
           <p>¿Cuál usa <strong>gu</strong> sin diéresis?</p>
@@ -744,7 +735,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 11 (antes 12) -->
+    <!-- PÁGINA 11 (antes 12): Palabras con g, gue, gui -->
     <section id="page11" class="activity-page">
       <div class="activity">
         <h2>11. Palabras con g, gue, gui</h2>
@@ -761,7 +752,6 @@
         </div>
 
         <p>Completa las oraciones:</p>
-        <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Oración 1</h3>
           <p>La <strong>______</strong> de mi jardín se rompió.</p>
@@ -773,7 +763,6 @@
           <div id="r11_1" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <h3>Oración 2</h3>
           <p>El <strong>______</strong> de seda camina por la rama.</p>
@@ -785,7 +774,6 @@
           <div id="r11_2" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="card">
           <h3>Oración 3</h3>
           <p>Mi amiga se llama <strong>______</strong>.</p>
@@ -804,7 +792,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 12 (antes 13) -->
+    <!-- PÁGINA 12 (antes 13): Evaluación Parte 1 -->
     <section id="page12" class="activity-page">
       <div class="activity">
         <h2>12. Evaluación (Parte 1)</h2>
@@ -864,12 +852,11 @@
       </div>
     </section>
 
-    <!-- PÁGINA 13 (antes 14) -->
+    <!-- PÁGINA 13 (antes 14): Evaluación Parte 2 -->
     <section id="page13" class="activity-page">
       <div class="activity">
         <h2>13. Evaluación (Parte 2)</h2>
 
-        <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Ejercicio 1</h3>
           <p>Narración que dice las características de algo:</p>
@@ -881,7 +868,6 @@
           <div id="p13_1" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <h3>Ejercicio 2</h3>
           <p>Ejemplo de descripción:</p>
@@ -893,7 +879,6 @@
           <div id="p13_2" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="card">
           <h3>Ejercicio 3</h3>
           <p>Es la palabra que describe al sustantivo:</p>
@@ -905,7 +890,6 @@
           <div id="p13_3" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 4 -->
         <div class="card">
           <h3>Ejercicio 4</h3>
           <p>Es un adjetivo:</p>
@@ -917,7 +901,6 @@
           <div id="p13_4" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 5 -->
         <div class="card">
           <h3>Ejercicio 5</h3>
           <p>Adjetivo que corresponde al sustantivo "niña":</p>
@@ -935,7 +918,7 @@
       </div>
     </section>
 
-    <!-- PÁGINA 14 (antes 15) -->
+    <!-- PÁGINA 14 (antes 15): Fin -->
     <section id="page14" class="activity-page">
       <div class="activity">
         <h2>14. ¡Fin de actividades!</h2>
@@ -972,7 +955,7 @@
     };
 
     /***********************************************
-     * DRAG & DROP (Página 1 y Página 7)
+     * DRAG & DROP (Página 1, Página 7)
      ***********************************************/
     const draggables = document.querySelectorAll(".draggable");
     const dropZones = document.querySelectorAll(".drop-zone");
@@ -997,9 +980,11 @@
         drag.style.opacity = "1";
       });
     });
+
     function dragOver(e) {
       e.preventDefault();
     }
+
     function dropItem(e) {
       e.preventDefault();
       const category = e.dataTransfer.getData("text/plain");
@@ -1023,7 +1008,10 @@
      ***********************************************/
     function checkAnswer(resultDivId, message, isCorrect) {
       const div = document.getElementById(resultDivId);
-      if (!div) return;
+      if (!div) {
+        // si la pregunta no tiene un <div> de resultados, lo creamos “en caliente” 
+        return;
+      }
       div.style.color = isCorrect ? "green" : "red";
       div.innerText = message;
     }
