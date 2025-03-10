@@ -3,57 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oficios, gustos y fiestas - Páginas 1 a 15 (Botones Horizontales)</title>
+  <title>Oficios, gustos y fiestas - Versión Móvil (14 páginas)</title>
   <style>
     /**********************************************
-     * ESTILOS GENERALES (AZUL + NARANJA)
+     * ESTILOS GENERALES (Diseñado para móvil)
      **********************************************/
     body {
       background: #e3f2fd; /* Azul muy claro */
       font-family: "Comic Sans MS", sans-serif;
       margin: 0;
       padding: 0;
+      font-size: 1.05rem; /* tamaño de letra un poco mayor */
+      line-height: 1.4;
     }
     header, footer {
       text-align: center;
       background-color: #0288d1; /* Azul */
       color: #fff;
-      padding: 1em;
-      margin-bottom: 1em;
+      padding: 0.8em;
+      margin-bottom: 0.5em;
     }
     h1, h2, h3 {
       color: #333;
-      margin: 0.5em 0;
+      margin: 0.4em 0;
       text-align: center;
     }
     p {
-      margin: 0.6em 0;
-      line-height: 1.4;
+      margin: 0.4em 0;
       color: #333;
     }
 
-    /* CONTENEDOR PRINCIPAL */
+    /* CONTENEDOR PRINCIPAL - 100% ancho */
     .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 0 auto;
+      width: 100%;
+      margin: 0;
       background: #fff;
-      border-radius: 10px;
-      padding: 1em 2em 2em 2em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
+      border-radius: 0;
+      padding: 0.5em 1em 1em 1em;
     }
 
     /* NAVEGACIÓN (MENÚ DE “PÁGINAS”) */
     nav {
       text-align: center;
-      margin: 1em 0;
+      margin: 0.5em 0;
     }
     nav button {
       background-color: #ffa726; /* Naranja */
       border: none;
       border-radius: 8px;
-      padding: 8px 16px;
+      padding: 0.4em 0.8em;
       cursor: pointer;
       font-size: 0.9em;
       color: #333;
@@ -70,8 +68,8 @@
 
     /* BLOQUES DE ACTIVIDAD (FONDO NARANJA SUAVE + BORDE PUNTEADO) */
     .activity {
-      margin: 2em 0;
-      padding: 1em;
+      margin: 1em 0;
+      padding: 0.7em;
       border: 2px dashed #ffa726;
       border-radius: 10px;
       background-color: #fffde7; /* Naranja muy claro */
@@ -87,11 +85,11 @@
       background-color: #ffa726;
       border: none;
       border-radius: 8px;
-      padding: 8px 16px;
+      padding: 0.5em 1em;
       cursor: pointer;
-      font-size: 0.9em;
+      font-size: 0.85em;
       color: #333;
-      margin: 0.5em;
+      margin: 0.3em;
     }
     button:hover {
       background-color: #fb8c00;
@@ -99,21 +97,22 @@
 
     .nav-buttons {
       text-align: center;
-      margin-top: 2em;
+      margin-top: 1em;
     }
 
     /* DRAG & DROP */
     .drag-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 1em;
+      gap: 0.5em;
       justify-content: center;
+      margin-bottom: 0.5em;
     }
     .draggable {
-      width: 80px;
-      height: 80px;
+      width: 110px;
+      min-height: 40px;
       background-color: #c5e1a5; /* Verde claro */
-      border-radius: 50%;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -122,34 +121,39 @@
       cursor: move;
       user-select: none;
       text-align: center;
+      font-size: 0.8em;
+      padding: 0.3em;
     }
     .drop-zone {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      min-height: 60px;
       border: 3px dashed #26c6da; /* Azul */
       border-radius: 10px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      margin: 1em auto;
+      justify-content: flex-start;
+      margin: 0.5em auto;
       font-weight: bold;
       color: #00796b;
       text-align: center;
+      font-size: 0.8em;
+      padding: 0.5em;
     }
 
-    /* TABLAS */
+    /* TABLAS - ancho completo en móvil */
     table {
       border-collapse: collapse;
       margin: 1em auto;
       width: 100%;
-      max-width: 600px;
       overflow-x: auto;
     }
     th, td {
       border: 1px solid #ccc;
       text-align: center;
-      padding: 8px;
+      padding: 6px;
       word-wrap: break-word;
+      font-size: 0.9em;
     }
 
     /* INPUTS */
@@ -158,16 +162,14 @@
     textarea {
       border: 2px solid #ccc;
       border-radius: 5px;
-      font-size: 1em;
-      padding: 4px 8px;
-      margin: 0.4em 0;
-      width: 75%;
-      max-width: 300px;
+      font-size: 0.9em;
+      padding: 0.3em 0.5em;
+      margin: 0.3em 0;
+      width: 90%;
+      max-width: 100%;
     }
     textarea {
-      width: 90%;
-      max-width: 600px;
-      height: 60px;
+      height: 50px;
       resize: vertical;
     }
 
@@ -175,56 +177,45 @@
     .card {
       border: 2px solid #0288d1;
       border-radius: 8px;
-      padding: 1em;
-      margin-bottom: 1em;
+      padding: 0.7em;
+      margin-bottom: 0.8em;
       background-color: #f1f8e9; /* Verde clarito */
     }
     .card h3 {
       margin-top: 0;
       color: #333;
       text-align: center;
+      font-size: 1em;
+    }
+    .card p {
+      font-size: 0.9em;
+      text-align: center;
     }
     .card .options-row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1em;
-      margin-top: 1em;
+      gap: 0.5em;
+      margin-top: 0.5em;
     }
     .card .options-row button {
-      margin: 0; /* para mantener la fila más compacta */
+      margin: 0; 
+      font-size: 0.8em;
+      padding: 0.4em 0.7em;
     }
 
     .result-msg {
-      margin-top: 1em;
+      margin-top: 0.5em;
       font-weight: bold;
+      font-size: 0.9em;
+      text-align: center;
     }
 
-    /* MEDIA QUERY PARA PANTALLAS PEQUEÑAS */
-    @media (max-width: 600px) {
-      nav button {
-        padding: 6px 10px;
-        font-size: 0.8em;
-      }
-      .draggable {
-        width: 60px;
-        height: 60px;
-        font-size: 0.8em;
-      }
-      .drop-zone {
-        width: 120px;
-        height: 120px;
-      }
-      button {
-        font-size: 0.8em;
-        padding: 6px 12px;
-      }
-      .container {
-        padding: 1em;
-      }
-      input[type="text"], select, textarea {
-        width: 90%;
-      }
+    /* Ajustes finales al footer */
+    footer {
+      margin-top: 0.5em;
+      padding: 0.8em;
+      text-align: center;
     }
   </style>
 </head>
@@ -232,39 +223,48 @@
 <body>
   <header>
     <h1>Oficios, gustos y fiestas</h1>
-    <p style="font-size:1.2em;">Páginas 1 a 15 (Opciones en Botones Horizontales) <span>📱💖🎉</span></p>
+    <p style="font-size:1em;">Versión Móvil (14 páginas) <span>📱💖</span></p>
   </header>
 
   <!-- MENÚ DE NAVEGACIÓN -->
   <nav>
-    <button onclick="showPage('page1')">Página 1</button>
-    <button onclick="showPage('page2')">Página 2</button>
-    <button onclick="showPage('page3')">Página 3</button>
-    <button onclick="showPage('page4')">Página 4</button>
-    <button onclick="showPage('page5')">Página 5</button>
-    <button onclick="showPage('page6')">Página 6</button>
-    <button onclick="showPage('page7')">Página 7</button>
-    <button onclick="showPage('page8')">Página 8</button>
-    <button onclick="showPage('page9')">Página 9</button>
-    <button onclick="showPage('page10')">Página 10</button>
-    <button onclick="showPage('page11')">Página 11</button>
-    <button onclick="showPage('page12')">Página 12</button>
-    <button onclick="showPage('page13')">Página 13</button>
-    <button onclick="showPage('page14')">Página 14</button>
-    <button onclick="showPage('page15')">Página 15</button>
+    <button onclick="showPage('page1')">1</button>
+    <button onclick="showPage('page2')">2</button>
+    <button onclick="showPage('page3')">3</button>
+    <button onclick="showPage('page4')">4</button>
+    <button onclick="showPage('page5')">5</button>
+    <button onclick="showPage('page6')">6</button>
+    <button onclick="showPage('page7')">7</button>
+    <button onclick="showPage('page8')">8</button>
+    <button onclick="showPage('page9')">9</button>
+    <button onclick="showPage('page10')">10</button>
+    <button onclick="showPage('page11')">11</button>
+    <button onclick="showPage('page12')">12</button>
+    <button onclick="showPage('page13')">13</button>
+    <button onclick="showPage('page14')">14</button>
   </nav>
 
   <div class="container">
-    <!-- PÁGINAS SIN OPCIÓN MÚLTIPLE (1-5, 8, 9, 15) se mantienen básicamente igual -->
-    <!-- ========================================================================================= -->
-
+    
     <!-- PÁGINA 1 -->
     <section id="page1" class="activity-page">
       <div class="activity">
-        <h2>1. Diferencias entre oficios y profesiones <span>🛠📚</span></h2>
-        <p><em>Oficios</em> requieren habilidades prácticas. <em>Profesiones</em> requieren estudios formales.</p>
+        <h2>1. Oficios vs Profesiones</h2>
+
+        <!-- Definición (opción múltiple) -->
+        <div class="card">
+          <h3>Definición: ¿Cuál describe mejor “Oficios”?</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res1a','¡Correcto! 🎉',true)">Requieren habilidades prácticas</button>
+            <button onclick="checkAnswer('res1a','No, esa es Profesión',false)">Necesitan título universitario</button>
+            <button onclick="checkAnswer('res1a','No coincide.',false)">Se estudian en la primaria</button>
+          </div>
+          <div id="res1a" class="result-msg"></div>
+        </div>
+
         <p>Arrastra cada tarjeta a su lugar:</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 1em;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 0.5em;">
           <div>
             <h3>Zona: Oficios</h3>
             <div class="drop-zone" id="dropOficios">Arrastra aquí</div>
@@ -274,7 +274,8 @@
             <div class="drop-zone" id="dropProfesiones">Arrastra aquí</div>
           </div>
         </div>
-        <div class="drag-container" style="margin-top:1em;">
+
+        <div class="drag-container" style="margin-top:0.5em;">
           <div class="draggable" draggable="true" data-category="oficio">🔨 Carpintero</div>
           <div class="draggable" draggable="true" data-category="oficio">🔧 Plomero</div>
           <div class="draggable" draggable="true" data-category="profesion">👨‍⚕️ Doctor</div>
@@ -291,11 +292,23 @@
     <!-- PÁGINA 2 -->
     <section id="page2" class="activity-page">
       <div class="activity">
-        <h2>2. Oficios de antes y de ahora <span>⏳💡</span></h2>
+        <h2>2. Oficios de antes y de ahora</h2>
+
+        <div class="card">
+          <h3>Definición: ¿Qué es un “oficio antiguo”?</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res2a','¡Correcto! 🎉',true)">Uno que ha desaparecido o es muy poco común</button>
+            <button onclick="checkAnswer('res2a','No coincide.',false)">Uno que requiere título profesional</button>
+            <button onclick="checkAnswer('res2a','No coincide.',false)">Cualquiera con tecnología</button>
+          </div>
+          <div id="res2a" class="result-msg"></div>
+        </div>
+
         <p>Escribe un oficio antiguo y uno moderno:</p>
         <ul style="list-style: none;">
-          <li><label>Oficio antiguo: </label> <input type="text" placeholder="Ej. Aguador, pregonero..." /></li>
-          <li><label>Oficio moderno: </label> <input type="text" placeholder="Ej. Programador, diseñador..." /></li>
+          <li><label>Oficio antiguo: </label><input type="text" placeholder="Ej. Aguador..." /></li>
+          <li><label>Oficio moderno: </label><input type="text" placeholder="Ej. Programador..." /></li>
         </ul>
       </div>
       <div class="nav-buttons">
@@ -304,40 +317,45 @@
       </div>
     </section>
 
-    <!-- PÁGINA 3 (OPCIÓN MÚLTIPLE PERO EN LA VERSIÓN ORIGINAL QUEDARON RADIO, AHORA TARJETAS) -->
-    <!-- ******************************************************************************************
-         SIN EMBARGO, el usuario ha pedido "tarjetas" y "botones horizontales" donde haya MC.
-         REHACEMOS LA LÓGICA a card-based. 
-    -->
+    <!-- PÁGINA 3 -->
     <section id="page3" class="activity-page">
       <div class="activity">
-        <h2>3. Identifica el oficio <span>🤔🏆</span></h2>
-        <p>Da clic en la opción correcta. Si fallas, verás un mensaje.</p>
-        
+        <h2>3. Identifica el oficio</h2>
+
+        <div class="card">
+          <h3>Definición: “Oficio”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res3def','¡Correcto! 🎉',true)">Actividad aprendida con experiencia, no requiere título</button>
+            <button onclick="checkAnswer('res3def','No coincide.',false)">Siempre necesita universidad</button>
+            <button onclick="checkAnswer('res3def','No coincide.',false)">Es cualquier hobby</button>
+          </div>
+          <div id="res3def" class="result-msg"></div>
+        </div>
+
+        <p>Da clic en la opción correcta:</p>
+
         <!-- Tarjeta 1 -->
         <div class="card">
-          <h3>Pregunta 1</h3>
-          <p>¿Quién construye muebles de madera?</p>
+          <h3>¿Quién construye muebles de madera?</h3>
           <div class="options-row">
-            <button onclick="checkAnswer('res3_1','El panadero hace pan, no muebles.', false)">Panadero</button>
-            <button onclick="checkAnswer('res3_1','¡Correcto! 🎉', true)">Carpintero</button>
-            <button onclick="checkAnswer('res3_1','El jardinero cuida jardines.', false)">Jardinero</button>
+            <button onclick="checkAnswer('q3_1','No, hace pan.',false)">Panadero</button>
+            <button onclick="checkAnswer('q3_1','¡Correcto! 🎉',true)">Carpintero</button>
+            <button onclick="checkAnswer('q3_1','No, cuida jardines.',false)">Jardinero</button>
           </div>
-          <div id="res3_1" class="result-msg"></div>
+          <div id="q3_1" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 2 -->
         <div class="card">
-          <h3>Pregunta 2</h3>
-          <p>¿Quién hornea panes y pasteles?</p>
+          <h3>¿Quién hornea panes y pasteles?</h3>
           <div class="options-row">
-            <button onclick="checkAnswer('res3_2','El plomero arregla tuberías.', false)">Plomero</button>
-            <button onclick="checkAnswer('res3_2','¡Correcto! 🎉', true)">Panadero</button>
-            <button onclick="checkAnswer('res3_2','El albañil construye paredes.', false)">Albañil</button>
+            <button onclick="checkAnswer('q3_2','No, arregla tuberías.',false)">Plomero</button>
+            <button onclick="checkAnswer('q3_2','¡Correcto! 🎉',true)">Panadero</button>
+            <button onclick="checkAnswer('q3_2','No, construye muros.',false)">Albañil</button>
           </div>
-          <div id="res3_2" class="result-msg"></div>
+          <div id="q3_2" class="result-msg"></div>
         </div>
-
       </div>
       <div class="nav-buttons">
         <button onclick="showPage('page2')">&laquo; Anterior</button>
@@ -348,9 +366,21 @@
     <!-- PÁGINA 4 -->
     <section id="page4" class="activity-page">
       <div class="activity">
-        <h2>4. ¿Qué me gusta y qué me disgusta? <span>💖😣</span></h2>
+        <h2>4. ¿Qué me gusta y qué me disgusta?</h2>
+
+        <div class="card">
+          <h3>Definición: “Gusto”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res4def','¡Correcto! 🎉',true)">Algo que nos agrada</button>
+            <button onclick="checkAnswer('res4def','No coincide.',false)">Algo que nos enoja</button>
+            <button onclick="checkAnswer('res4def','No coincide.',false)">Algo que nos da miedo</button>
+          </div>
+          <div id="res4def" class="result-msg"></div>
+        </div>
+
         <p>Selecciona tus preferencias:</p>
-        <p>1. Comida que más me gusta:
+        <p>1. Comida que más me gusta:  
           <select>
             <option value="">(Seleccionar)</option>
             <option value="🍕 Pizza">🍕 Pizza</option>
@@ -358,7 +388,7 @@
             <option value="🍔 Hamburguesa">🍔 Hamburguesa</option>
           </select>
         </p>
-        <p>2. Me causa alegría cuando...
+        <p>2. Me causa alegría cuando...  
           <select>
             <option value="">(Seleccionar)</option>
             <option value="🎉 Fiesta">🎉 Tengo una fiesta</option>
@@ -366,7 +396,7 @@
             <option value="🎁 Regalo">🎁 Recibo un regalo</option>
           </select>
         </p>
-        <p>3. Me da un poco de miedo...
+        <p>3. Me da un poco de miedo...  
           <select>
             <option value="">(Seleccionar)</option>
             <option value="🐍 Serpientes">🐍 Serpientes</option>
@@ -381,36 +411,22 @@
       </div>
     </section>
 
-    <!-- PÁGINA 5 -->
+    <!-- PÁGINA 5 (antes 6) -->
     <section id="page5" class="activity-page">
       <div class="activity">
-        <h2>5. Mis gustos en un cuadro <span>🎨📝</span></h2>
-        <p>Completa la tabla con lo que te gusta o no te gusta:</p>
-        <table>
-          <tr>
-            <th>Mi comida favorita</th>
-            <th>Lo que no me gusta comer</th>
-            <th>Mi lugar favorito</th>
-            <th>Mi deporte favorito</th>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Ej. Pizza" /></td>
-            <td><input type="text" placeholder="Ej. Aguacate" /></td>
-            <td><input type="text" placeholder="Ej. Playa" /></td>
-            <td><input type="text" placeholder="Ej. Fútbol" /></td>
-          </tr>
-        </table>
-      </div>
-      <div class="nav-buttons">
-        <button onclick="showPage('page4')">&laquo; Anterior</button>
-        <button onclick="showPage('page6')">Siguiente &raquo;</button>
-      </div>
-    </section>
+        <h2>5. ¡Describimos con adjetivos!</h2>
 
-    <!-- PÁGINA 6 (OPCIÓN MÚLTIPLE EN TARJETAS) -->
-    <section id="page6" class="activity-page">
-      <div class="activity">
-        <h2>6. ¡Describimos con adjetivos! <span>📖✨</span></h2>
+        <div class="card">
+          <h3>Definición: “Adjetivo”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res5def','No coincide.',false)">Una acción</button>
+            <button onclick="checkAnswer('res5def','¡Correcto! 🎉',true)">Palabra que describe al sustantivo</button>
+            <button onclick="checkAnswer('res5def','No coincide.',false)">Expresión de cariño</button>
+          </div>
+          <div id="res5def" class="result-msg"></div>
+        </div>
+
         <p>1. Escribe un adjetivo para cada sustantivo:</p>
         <ul>
           <li>Mamá: <input type="text" placeholder="Ej. cariñosa" /></li>
@@ -419,41 +435,85 @@
           <li>Libro: <input type="text" placeholder="Ej. interesante" /></li>
         </ul>
 
-        <p>2. Identifica los adjetivos en estas oraciones (solo anota en tu libreta):</p>
-        <ul>
-          <li>El gato <em>negro</em> saltó.</li>
-          <li>El parque es <em>grande</em> y tiene flores <em>bonitas</em>.</li>
-          <li>Me gusta comer palomitas <em>dulces</em> y <em>saladas</em>.</li>
-        </ul>
-
         <hr />
-
         <h3>Opción Múltiple - Tarjetas</h3>
-
-        <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Pregunta 1</h3>
           <p>¿Cuál de estas palabras es un adjetivo?</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r6_1','Incorrecto.', false)">Gato</button>
-            <button onclick="checkAnswer('r6_1','¡Correcto! 🎉', true)">grande</button>
-            <button onclick="checkAnswer('r6_1','Incorrecto.', false)">comí</button>
+            <button onclick="checkAnswer('r5_1','Incorrecto.',false)">Gato</button>
+            <button onclick="checkAnswer('r5_1','¡Correcto! 🎉',true)">grande</button>
+            <button onclick="checkAnswer('r5_1','Incorrecto.',false)">comí</button>
           </div>
-          <div id="r6_1" class="result-msg"></div>
+          <div id="r5_1" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <h3>Pregunta 2</h3>
           <p>¿Qué palabra describe a la playa?</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r6_2','No describe la playa.', false)">canta</button>
-            <button onclick="checkAnswer('r6_2','¡Correcto! 🎉', true)">soleada</button>
-            <button onclick="checkAnswer('r6_2','No describe la playa.', false)">zapato</button>
+            <button onclick="checkAnswer('r5_2','No describe la playa.',false)">canta</button>
+            <button onclick="checkAnswer('r5_2','¡Correcto! 🎉',true)">soleada</button>
+            <button onclick="checkAnswer('r5_2','No describe la playa.',false)">zapato</button>
+          </div>
+          <div id="r5_2" class="result-msg"></div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="showPage('page4')">&laquo; Anterior</button>
+        <button onclick="showPage('page6')">Siguiente &raquo;</button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 6 (antes 7) -->
+    <section id="page6" class="activity-page">
+      <div class="activity">
+        <h2>6. Observa los emojis</h2>
+
+        <div class="card">
+          <h3>Definición: “Emoji”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res6def','No coincide.',false)">Elemento químico</button>
+            <button onclick="checkAnswer('res6def','¡Correcto! 🎉',true)">Ícono que representa una emoción o idea</button>
+            <button onclick="checkAnswer('res6def','No coincide.',false)">Expresión musical</button>
+          </div>
+          <div id="res6def" class="result-msg"></div>
+        </div>
+
+        <p>Elige el adjetivo adecuado:</p>
+        <div class="card">
+          <h3>😋</h3>
+          <p>¿Cómo se siente alguien con esta cara?</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r6_1','Incorrecto.',false)">Asustado</button>
+            <button onclick="checkAnswer('r6_1','¡Correcto! 🎉',true)">Hambriento</button>
+            <button onclick="checkAnswer('r6_1','Incorrecto.',false)">Enojado</button>
+          </div>
+          <div id="r6_1" class="result-msg"></div>
+        </div>
+
+        <div class="card">
+          <h3>😱</h3>
+          <p>¿Qué adjetivo describe a alguien que pone esta cara?</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r6_2','¡Correcto! 🎉',true)">Sorprendido</button>
+            <button onclick="checkAnswer('r6_2','Incorrecto.',false)">Feliz</button>
+            <button onclick="checkAnswer('r6_2','Incorrecto.',false)">Encantado</button>
           </div>
           <div id="r6_2" class="result-msg"></div>
         </div>
 
+        <div class="card">
+          <h3>😭</h3>
+          <p>Este emoji se ve...</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r6_3','¡Correcto! 🎉',true)">Triste</button>
+            <button onclick="checkAnswer('r6_3','Incorrecto.',false)">Divertido</button>
+            <button onclick="checkAnswer('r6_3','Incorrecto.',false)">Confundido</button>
+          </div>
+          <div id="r6_3" class="result-msg"></div>
+        </div>
       </div>
       <div class="nav-buttons">
         <button onclick="showPage('page5')">&laquo; Anterior</button>
@@ -461,45 +521,40 @@
       </div>
     </section>
 
-    <!-- PÁGINA 7 (EMOJIS MULTIPLE) -->
+    <!-- PÁGINA 7 (antes 8) - DRAG & DROP de fiestas de pueblo vs ciudad (ACTUALIZADO) -->
     <section id="page7" class="activity-page">
       <div class="activity">
-        <h2>7. Observa los emojis y elige el adjetivo <span>👀📝</span></h2>
+        <h2>7. Fiestas de pueblo y de ciudad</h2>
 
-        <!-- Tarjeta 1 -->
         <div class="card">
-          <h3>Pregunta 1</h3>
-          <p>😋 ¿Cómo se siente alguien con esta cara?</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r7_1','Incorrecto.', false)">Asustado</button>
-            <button onclick="checkAnswer('r7_1','¡Correcto! 🎉', true)">Hambriento</button>
-            <button onclick="checkAnswer('r7_1','Incorrecto.', false)">Enojado</button>
-          </div>
-          <div id="r7_1" class="result-msg"></div>
-        </div>
+          <h3>Arrastra cada fiesta a su categoría</h3>
+          <p>Arrastra 4 fiestas típicas de Ciudad y 4 de Pueblo.</p>
 
-        <!-- Tarjeta 2 -->
-        <div class="card">
-          <h3>Pregunta 2</h3>
-          <p>😱 ¿Qué adjetivo describe a alguien que pone esta cara?</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r7_2','¡Correcto! 🎉', true)">Sorprendido</button>
-            <button onclick="checkAnswer('r7_2','Incorrecto.', false)">Feliz</button>
-            <button onclick="checkAnswer('r7_2','Incorrecto.', false)">Encantado</button>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top:0.5em;">
+            <div>
+              <h3>Fiestas de Pueblo</h3>
+              <div class="drop-zone" id="dropPueblo">Arrastra aquí</div>
+            </div>
+            <div>
+              <h3>Fiestas de Ciudad</h3>
+              <div class="drop-zone" id="dropCiudad">Arrastra aquí</div>
+            </div>
           </div>
-          <div id="r7_2" class="result-msg"></div>
-        </div>
 
-        <!-- Tarjeta 3 -->
-        <div class="card">
-          <h3>Pregunta 3</h3>
-          <p>😭 Este emoji se ve...</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r7_3','¡Correcto! 🎉', true)">Triste</button>
-            <button onclick="checkAnswer('r7_3','Incorrecto.', false)">Divertido</button>
-            <button onclick="checkAnswer('r7_3','Incorrecto.', false)">Confundido</button>
+          <p style="margin:0.6em 0;">Opciones a arrastrar:</p>
+          <div class="drag-container">
+            <!-- Fiestas de Pueblo (data-category="pueblo") -->
+            <div class="draggable" draggable="true" data-category="pueblo">Vaqueria</div>
+            <div class="draggable" draggable="true" data-category="pueblo">Hanal Pixán</div>
+            <div class="draggable" draggable="true" data-category="pueblo">Semana Santa</div>
+            <div class="draggable" draggable="true" data-category="pueblo">Carnaval</div>
+
+            <!-- Fiestas de Ciudad (data-category="ciudad") -->
+            <div class="draggable" draggable="true" data-category="ciudad">Navidad</div>
+            <div class="draggable" draggable="true" data-category="ciudad">Ferias</div>
+            <div class="draggable" draggable="true" data-category="ciudad">Conciertos</div>
+            <div class="draggable" draggable="true" data-category="ciudad">Día del niño</div>
           </div>
-          <div id="r7_3" class="result-msg"></div>
         </div>
 
       </div>
@@ -509,23 +564,36 @@
       </div>
     </section>
 
-    <!-- PÁGINA 8 -->
+    <!-- PÁGINA 8 (antes 9) -->
     <section id="page8" class="activity-page">
       <div class="activity">
-        <h2>8. Celebrando en la comunidad <span>🎉🏠</span></h2>
-        <p>¿Qué fiestas populares se celebran en tu comunidad? ¿Son de pueblo o ciudad?</p>
-        <textarea placeholder="Escribe aquí..."></textarea>
-        <p>Diferencias entre fiestas de pueblo y de ciudad:</p>
-        <table>
-          <tr>
-            <th>Fiestas de pueblo</th>
-            <th>Fiestas de ciudad</th>
-          </tr>
-          <tr>
-            <td><textarea placeholder="Ej. menos gente, más tradiciones..."></textarea></td>
-            <td><textarea placeholder="Ej. más grande, conciertos..."></textarea></td>
-          </tr>
-        </table>
+        <h2>8. Investiga tu fiesta tradicional</h2>
+
+        <div class="card">
+          <h3>¿Qué cosas son típicas de una fiesta tradicional?</h3>
+          <p>Selecciona. Si es incorrecto, verás un aviso.</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res8_1','¡Correcto! 🎉',true)">Comida típica</button>
+            <button onclick="checkAnswer('res8_2','¡Correcto! 🎉',true)">Trajes típicos</button>
+            <button onclick="checkAnswer('res8_3','No, no es lo común.',false)">Comida de restaurante</button>
+          </div>
+          <div class="options-row">
+            <button onclick="checkAnswer('res8_4','¡Correcto! 🎉',true)">Bailes típicos</button>
+            <button onclick="checkAnswer('res8_5','No, no siempre hay DJ.',false)">DJ toca música</button>
+            <button onclick="checkAnswer('res8_6','No, eso no es típico.',false)">Dan regalos</button>
+          </div>
+          <div id="res8_1" class="result-msg"></div>
+          <div id="res8_2" class="result-msg"></div>
+          <div id="res8_3" class="result-msg"></div>
+          <div id="res8_4" class="result-msg"></div>
+          <div id="res8_5" class="result-msg"></div>
+          <div id="res8_6" class="result-msg"></div>
+        </div>
+
+        <hr />
+        <p>Fuente consultada: <input type="text" /></p>
+        <p>Nombre de la fiesta: <input type="text" /></p>
+        <textarea placeholder="Describe tu hallazgo (comida, trajes, bailes...)"></textarea>
       </div>
       <div class="nav-buttons">
         <button onclick="showPage('page7')">&laquo; Anterior</button>
@@ -533,16 +601,71 @@
       </div>
     </section>
 
-    <!-- PÁGINA 9 -->
+    <!-- PÁGINA 9 (antes 10) -->
     <section id="page9" class="activity-page">
       <div class="activity">
-        <h2>9. Investiga tu fiesta tradicional <span>📚🔎</span></h2>
-        <p>1. Fuente consultada: <input type="text" /></p>
-        <p>2. Nombre de la fiesta: <input type="text" /></p>
-        <p>3. ¿Hay comida típica? ¿Trajes típicos? ¿Actividades?</p>
-        <textarea placeholder="Anota aquí lo que encontraste..."></textarea>
-        <p>Dibuja (o describe) tu fiesta favorita:</p>
-        <textarea placeholder="Describe tu dibujo..."></textarea>
+        <h2>9. ¡Preguntas y exclamaciones!</h2>
+
+        <div class="card">
+          <h3>Definición: “Signos de interrogación y exclamación”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res9def','¡Correcto! 🎉',true)">Símbolos para preguntar o expresar emoción</button>
+            <button onclick="checkAnswer('res9def','No coincide.',false)">Palabras que describen sustantivos</button>
+            <button onclick="checkAnswer('res9def','No coincide.',false)">Se usan para hacer listas</button>
+          </div>
+          <div id="res9def" class="result-msg"></div>
+        </div>
+
+        <p>Completa cada oración:</p>
+
+        <!-- Tarjeta 1 -->
+        <div class="card">
+          <h3>Oración 1</h3>
+          <p>___ Quieres ir al carnaval ___</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r9_1','¡Correcto! 🎉',true)">¿, ?</button>
+            <button onclick="checkAnswer('r9_1','Incorrecto.',false)">¡, !</button>
+            <button onclick="checkAnswer('r9_1','Incorrecto.',false)">Ninguno</button>
+          </div>
+          <div id="r9_1" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+          <h3>Oración 2</h3>
+          <p>___ Qué padre está el carnaval ___</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r9_2','Incorrecto.',false)">¿, ?</button>
+            <button onclick="checkAnswer('r9_2','¡Correcto! 🎉',true)">¡, !</button>
+            <button onclick="checkAnswer('r9_2','Incorrecto.',false)">Ninguno</button>
+          </div>
+          <div id="r9_2" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+          <h3>Oración 3</h3>
+          <p>___ Iremos al zócalo el 15 de septiembre ___</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r9_3','Incorrecto.',false)">¿, ?</button>
+            <button onclick="checkAnswer('r9_3','¡Correcto! 🎉',true)">¡, !</button>
+            <button onclick="checkAnswer('r9_3','Incorrecto.',false)">Ninguno</button>
+          </div>
+          <div id="r9_3" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card">
+          <h3>Oración 4</h3>
+          <p>___ Qué celebramos el 16 de septiembre ___</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r9_4','¡Correcto! 🎉',true)">¿, ?</button>
+            <button onclick="checkAnswer('r9_4','Incorrecto.',false)">¡, !</button>
+            <button onclick="checkAnswer('r9_4','Incorrecto.',false)">Ninguno</button>
+          </div>
+          <div id="r9_4" class="result-msg"></div>
+        </div>
       </div>
       <div class="nav-buttons">
         <button onclick="showPage('page8')">&laquo; Anterior</button>
@@ -550,82 +673,33 @@
       </div>
     </section>
 
-    <!-- PÁGINA 10 (OPCIÓN MÚLTIPLE CON BOTONES) -->
+    <!-- PÁGINA 10 (antes 11) -->
     <section id="page10" class="activity-page">
       <div class="activity">
-        <h2>10. ¡Preguntas y exclamaciones! <span>¿?¡!</span></h2>
-        <p>Completa cada oración eligiendo la pareja de signos correctos.</p>
+        <h2>10. Sonidos: qu, ch, gu, gü</h2>
 
-        <!-- Tarjeta 1 -->
         <div class="card">
-          <h3>Oración 1</h3>
-          <p><strong>___</strong> Quieres ir al carnaval <strong>___</strong></p>
+          <h3>Definición: “Sonidos qu, ch, gu, gü”</h3>
+          <p>Elige la opción correcta</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r10_1','¡Correcto! 🎉', true)">¿, ?</button>
-            <button onclick="checkAnswer('r10_1','No, revisa los signos.', false)">¡, !</button>
-            <button onclick="checkAnswer('r10_1','No, revisa los signos.', false)">Ninguno</button>
+            <button onclick="checkAnswer('res10def','¡Correcto! 🎉',true)">Combinaciones de letras en español</button>
+            <button onclick="checkAnswer('res10def','No coincide.',false)">Números romanos</button>
+            <button onclick="checkAnswer('res10def','No coincide.',false)">Signos de puntuación</button>
           </div>
-          <div id="r10_1" class="result-msg"></div>
+          <div id="res10def" class="result-msg"></div>
         </div>
 
-        <!-- Tarjeta 2 -->
-        <div class="card">
-          <h3>Oración 2</h3>
-          <p><strong>___</strong> Qué padre está el carnaval <strong>___</strong></p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r10_2','No, revisa los signos.', false)">¿, ?</button>
-            <button onclick="checkAnswer('r10_2','¡Correcto! 🎉', true)">¡, !</button>
-            <button onclick="checkAnswer('r10_2','No, revisa los signos.', false)">Ninguno</button>
-          </div>
-          <div id="r10_2" class="result-msg"></div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="card">
-          <h3>Oración 3</h3>
-          <p><strong>___</strong> Iremos al zócalo el 15 de septiembre <strong>___</strong></p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r10_3','No, revisa los signos.', false)">¿, ?</button>
-            <button onclick="checkAnswer('r10_3','¡Correcto! 🎉', true)">¡, !</button>
-            <button onclick="checkAnswer('r10_3','No, revisa los signos.', false)">Ninguno</button>
-          </div>
-          <div id="r10_3" class="result-msg"></div>
-        </div>
-
-        <!-- Tarjeta 4 -->
-        <div class="card">
-          <h3>Oración 4</h3>
-          <p><strong>___</strong> Qué celebramos el 16 de septiembre <strong>___</strong></p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r10_4','¡Correcto! 🎉', true)">¿, ?</button>
-            <button onclick="checkAnswer('r10_4','No, revisa los signos.', false)">¡, !</button>
-            <button onclick="checkAnswer('r10_4','No, revisa los signos.', false)">Ninguno</button>
-          </div>
-          <div id="r10_4" class="result-msg"></div>
-        </div>
-
-      </div>
-      <div class="nav-buttons">
-        <button onclick="showPage('page9')">&laquo; Anterior</button>
-        <button onclick="showPage('page11')">Siguiente &raquo;</button>
-      </div>
-    </section>
-
-    <!-- PÁGINA 11 (Antes 12) -> Sonidos qu, ch, gu, gü (tarjetas) -->
-    <section id="page11" class="activity-page">
-      <div class="activity">
-        <h2>11. Sonidos: qu, ch, gu, gü <span>🔊🔡</span></h2>
-
+        <p>Elige la opción correcta:</p>
         <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Pregunta 1</h3>
           <p>¿Cuál de estas palabras usa <strong>qu</strong>?</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r11_1','No, revisa de nuevo.', false)">keso</button>
-            <button onclick="checkAnswer('r11_1','¡Correcto! 🎉', true)">queso</button>
-            <button onclick="checkAnswer('r11_1','No, revisa de nuevo.', false)">gueso</button>
+            <button onclick="checkAnswer('q10_1','No, revisa de nuevo.',false)">keso</button>
+            <button onclick="checkAnswer('q10_1','¡Correcto! 🎉',true)">queso</button>
+            <button onclick="checkAnswer('q10_1','No, revisa de nuevo.',false)">gueso</button>
           </div>
-          <div id="r11_1" class="result-msg"></div>
+          <div id="q10_1" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 2 -->
@@ -633,36 +707,96 @@
           <h3>Pregunta 2</h3>
           <p>¿Cuál de estas usa <strong>ch</strong>?</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r11_2','No, revisa de nuevo.', false)">shuletta</button>
-            <button onclick="checkAnswer('r11_2','¡Correcto! 🎉', true)">chuleta</button>
-            <button onclick="checkAnswer('r11_2','No, revisa de nuevo.', false)">xuletta</button>
+            <button onclick="checkAnswer('q10_2','No.',false)">shuletta</button>
+            <button onclick="checkAnswer('q10_2','¡Correcto! 🎉',true)">chuleta</button>
+            <button onclick="checkAnswer('q10_2','No.',false)">xuletta</button>
+          </div>
+          <div id="q10_2" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+          <h3>Pregunta 3</h3>
+          <p>¿Cuál lleva diéresis <strong>ü</strong>?</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('q10_3','¡Correcto! 🎉',true)">pingüino</button>
+            <button onclick="checkAnswer('q10_3','No.',false)">pinguino</button>
+            <button onclick="checkAnswer('q10_3','No.',false)">pinguiono</button>
+          </div>
+          <div id="q10_3" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card">
+          <h3>Pregunta 4</h3>
+          <p>¿Cuál usa <strong>gu</strong> sin diéresis?</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('q10_4','¡Correcto! 🎉',true)">guiño</button>
+            <button onclick="checkAnswer('q10_4','No.',false)">gueña</button>
+            <button onclick="checkAnswer('q10_4','No.',false)">güino</button>
+          </div>
+          <div id="q10_4" class="result-msg"></div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="showPage('page9')">&laquo; Anterior</button>
+        <button onclick="showPage('page11')">Siguiente &raquo;</button>
+      </div>
+    </section>
+
+    <!-- PÁGINA 11 (antes 12) -->
+    <section id="page11" class="activity-page">
+      <div class="activity">
+        <h2>11. Palabras con g, gue, gui</h2>
+
+        <div class="card">
+          <h3>Definición: “Palabras con g, gue, gui”</h3>
+          <p>Elige la opción correcta</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('res11def','¡Correcto! 🎉',true)">Formas de escribir el sonido /g/ en español</button>
+            <button onclick="checkAnswer('res11def','No coincide.',false)">Formas de escribir la /m/</button>
+            <button onclick="checkAnswer('res11def','No coincide.',false)">Variantes de /ch/</button>
+          </div>
+          <div id="res11def" class="result-msg"></div>
+        </div>
+
+        <p>Completa las oraciones:</p>
+        <!-- Tarjeta 1 -->
+        <div class="card">
+          <h3>Oración 1</h3>
+          <p>La <strong>______</strong> de mi jardín se rompió.</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r11_1','¡Correcto! 🎉',true)">manguera</button>
+            <button onclick="checkAnswer('r11_1','No.',false)">mangüera</button>
+            <button onclick="checkAnswer('r11_1','No.',false)">mangera</button>
+          </div>
+          <div id="r11_1" class="result-msg"></div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+          <h3>Oración 2</h3>
+          <p>El <strong>______</strong> de seda camina por la rama.</p>
+          <div class="options-row">
+            <button onclick="checkAnswer('r11_2','¡Correcto! 🎉',true)">gusano</button>
+            <button onclick="checkAnswer('r11_2','No.',false)">güsano</button>
+            <button onclick="checkAnswer('r11_2','No.',false)">gucano</button>
           </div>
           <div id="r11_2" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 3 -->
         <div class="card">
-          <h3>Pregunta 3</h3>
-          <p>¿Cuál lleva la diéresis <strong>ü</strong>?</p>
+          <h3>Oración 3</h3>
+          <p>Mi amiga se llama <strong>______</strong>.</p>
           <div class="options-row">
-            <button onclick="checkAnswer('r11_3','¡Correcto! 🎉', true)">pingüino</button>
-            <button onclick="checkAnswer('r11_3','No, revisa de nuevo.', false)">pinguino</button>
-            <button onclick="checkAnswer('r11_3','No, revisa de nuevo.', false)">pinguiono</button>
+            <button onclick="checkAnswer('r11_3','No.',false)">Marguarita</button>
+            <button onclick="checkAnswer('r11_3','¡Correcto! 🎉',true)">Margarita</button>
+            <button onclick="checkAnswer('r11_3','No.',false)">Margüerita</button>
           </div>
           <div id="r11_3" class="result-msg"></div>
         </div>
-
-        <!-- Tarjeta 4 -->
-        <div class="card">
-          <h3>Pregunta 4</h3>
-          <p>¿Cuál usa <strong>gu</strong> (sin diéresis)?</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r11_4','¡Correcto! 🎉', true)">guiño</button>
-            <button onclick="checkAnswer('r11_4','No, revisa de nuevo.', false)">gueña</button>
-            <button onclick="checkAnswer('r11_4','No, revisa de nuevo.', false)">güino</button>
-          </div>
-          <div id="r11_4" class="result-msg"></div>
-        </div>
+        <p><em>Escribe 2 palabras con “g” y 2 con “gu” en tu libreta.</em></p>
       </div>
       <div class="nav-buttons">
         <button onclick="showPage('page10')">&laquo; Anterior</button>
@@ -670,71 +804,22 @@
       </div>
     </section>
 
-    <!-- PÁGINA 12 (Antes 13) estilo duolingo en tarjetas -->
+    <!-- PÁGINA 12 (antes 13) -->
     <section id="page12" class="activity-page">
       <div class="activity">
-        <h2>12. Palabras con g, gue, gui (estilo Duolingo) <span>📝</span></h2>
-        <p>Da clic en la opción correcta para cada oración:</p>
-
-        <!-- Tarjeta 1 -->
-        <div class="card">
-          <h3>Oración 1</h3>
-          <p>La ______ de mi jardín se rompió.</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r12_1','¡Correcto! 🎉', true)">manguera</button>
-            <button onclick="checkAnswer('r12_1','No, revisa de nuevo.', false)">mangüera</button>
-            <button onclick="checkAnswer('r12_1','No, revisa de nuevo.', false)">mangera</button>
-          </div>
-          <div id="r12_1" class="result-msg"></div>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="card">
-          <h3>Oración 2</h3>
-          <p>El ______ de seda camina por la rama.</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r12_2','¡Correcto! 🎉', true)">gusano</button>
-            <button onclick="checkAnswer('r12_2','No, revisa de nuevo.', false)">güsano</button>
-            <button onclick="checkAnswer('r12_2','No, revisa de nuevo.', false)">gucano</button>
-          </div>
-          <div id="r12_2" class="result-msg"></div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="card">
-          <h3>Oración 3</h3>
-          <p>Mi amiga se llama ______.</p>
-          <div class="options-row">
-            <button onclick="checkAnswer('r12_3','No, revisa de nuevo.', false)">Marguarita</button>
-            <button onclick="checkAnswer('r12_3','¡Correcto! 🎉', true)">Margarita</button>
-            <button onclick="checkAnswer('r12_3','No, revisa de nuevo.', false)">Margüerita</button>
-          </div>
-          <div id="r12_3" class="result-msg"></div>
-        </div>
-
-        <p style="margin-top:1em;"><em>Escribe 2 palabras con “g” y 2 con “gu” en tu libreta.</em></p>
-      </div>
-      <div class="nav-buttons">
-        <button onclick="showPage('page11')">&laquo; Anterior</button>
-        <button onclick="showPage('page13')">Siguiente &raquo;</button>
-      </div>
-    </section>
-
-    <!-- PÁGINA 13 (Antes 14) - Evaluación Parte 1 (tarjetas) -->
-    <section id="page13" class="activity-page">
-      <div class="activity">
-        <h2>13. Evaluación (Parte 1) estilo tarjetas <span>📋📝</span></h2>
+        <h2>12. Evaluación (Parte 1)</h2>
+        <p>Estilo tarjetas y botones horizontales</p>
 
         <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Ejercicio 1</h3>
           <p>Ejemplo de oficio:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p13_1','Incorrecto.', false)">Abogado</button>
-            <button onclick="checkAnswer('p13_1','Incorrecto.', false)">Doctor</button>
-            <button onclick="checkAnswer('p13_1','¡Correcto! 🎉', true)">Albañil</button>
+            <button onclick="checkAnswer('p12_1','Incorrecto.',false)">Abogado</button>
+            <button onclick="checkAnswer('p12_1','Incorrecto.',false)">Doctor</button>
+            <button onclick="checkAnswer('p12_1','¡Correcto! 🎉',true)">Albañil</button>
           </div>
-          <div id="p13_1" class="result-msg"></div>
+          <div id="p12_1" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 2 -->
@@ -742,11 +827,11 @@
           <h3>Ejercicio 2</h3>
           <p>En una entrevista se necesita...</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p13_2','¡Correcto! 🎉', true)">Entrevistado y entrevistador</button>
-            <button onclick="checkAnswer('p13_2','Incorrecto.', false)">Reportero y reportado</button>
-            <button onclick="checkAnswer('p13_2','Incorrecto.', false)">Comentarista y comentador</button>
+            <button onclick="checkAnswer('p12_2','¡Correcto! 🎉',true)">Entrevistado y entrevistador</button>
+            <button onclick="checkAnswer('p12_2','Incorrecto.',false)">Reportero y reportado</button>
+            <button onclick="checkAnswer('p12_2','Incorrecto.',false)">Comentarista y comentador</button>
           </div>
-          <div id="p13_2" class="result-msg"></div>
+          <div id="p12_2" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 3 -->
@@ -754,11 +839,11 @@
           <h3>Ejercicio 3</h3>
           <p>Es un oficio:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p13_3','Incorrecto.', false)">(imagen 1)</button>
-            <button onclick="checkAnswer('p13_3','Incorrecto.', false)">(imagen 2)</button>
-            <button onclick="checkAnswer('p13_3','¡Correcto! 🎉', true)">(imagen 3)</button>
+            <button onclick="checkAnswer('p12_3','Incorrecto.',false)">(imagen 1)</button>
+            <button onclick="checkAnswer('p12_3','Incorrecto.',false)">(imagen 2)</button>
+            <button onclick="checkAnswer('p12_3','¡Correcto! 🎉',true)">(imagen 3)</button>
           </div>
-          <div id="p13_3" class="result-msg"></div>
+          <div id="p12_3" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 4 -->
@@ -766,35 +851,34 @@
           <h3>Ejercicio 4</h3>
           <p>El niño se ve contento.</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p13_4','Incorrecto.', false)">Triste</button>
-            <button onclick="checkAnswer('p13_4','Incorrecto.', false)">Enojado</button>
-            <button onclick="checkAnswer('p13_4','¡Correcto! 🎉', true)">Feliz</button>
+            <button onclick="checkAnswer('p12_4','Incorrecto.',false)">Triste</button>
+            <button onclick="checkAnswer('p12_4','Incorrecto.',false)">Enojado</button>
+            <button onclick="checkAnswer('p12_4','¡Correcto! 🎉',true)">Feliz</button>
           </div>
-          <div id="p13_4" class="result-msg"></div>
+          <div id="p12_4" class="result-msg"></div>
         </div>
-
       </div>
       <div class="nav-buttons">
-        <button onclick="showPage('page12')">&laquo; Anterior</button>
-        <button onclick="showPage('page14')">Siguiente &raquo;</button>
+        <button onclick="showPage('page11')">&laquo; Anterior</button>
+        <button onclick="showPage('page13')">Siguiente &raquo;</button>
       </div>
     </section>
 
-    <!-- PÁGINA 14 (Antes 15) - Evaluación Parte 2 (tarjetas) -->
-    <section id="page14" class="activity-page">
+    <!-- PÁGINA 13 (antes 14) -->
+    <section id="page13" class="activity-page">
       <div class="activity">
-        <h2>14. Evaluación (Parte 2) estilo tarjetas <span>📋📝</span></h2>
+        <h2>13. Evaluación (Parte 2)</h2>
 
         <!-- Tarjeta 1 -->
         <div class="card">
           <h3>Ejercicio 1</h3>
           <p>Narración que dice las características de algo:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p14_1','Incorrecto.', false)">Entrevista</button>
-            <button onclick="checkAnswer('p14_1','¡Correcto! 🎉', true)">Descripción</button>
-            <button onclick="checkAnswer('p14_1','Incorrecto.', false)">Cuento</button>
+            <button onclick="checkAnswer('p13_1','Incorrecto.',false)">Entrevista</button>
+            <button onclick="checkAnswer('p13_1','¡Correcto! 🎉',true)">Descripción</button>
+            <button onclick="checkAnswer('p13_1','Incorrecto.',false)">Cuento</button>
           </div>
-          <div id="p14_1" class="result-msg"></div>
+          <div id="p13_1" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 2 -->
@@ -802,11 +886,11 @@
           <h3>Ejercicio 2</h3>
           <p>Ejemplo de descripción:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p14_2','Incorrecto.', false)">La casa está cerca del parque.</button>
-            <button onclick="checkAnswer('p14_2','¡Correcto! 🎉', true)">La casa es grande, bonita...</button>
-            <button onclick="checkAnswer('p14_2','Incorrecto.', false)">La rana salta y nada.</button>
+            <button onclick="checkAnswer('p13_2','Incorrecto.',false)">La casa está cerca del parque.</button>
+            <button onclick="checkAnswer('p13_2','¡Correcto! 🎉',true)">La casa es grande, bonita...</button>
+            <button onclick="checkAnswer('p13_2','Incorrecto.',false)">La rana salta y nada.</button>
           </div>
-          <div id="p14_2" class="result-msg"></div>
+          <div id="p13_2" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 3 -->
@@ -814,11 +898,11 @@
           <h3>Ejercicio 3</h3>
           <p>Es la palabra que describe al sustantivo:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p14_3','¡Correcto! 🎉', true)">Adjetivo</button>
-            <button onclick="checkAnswer('p14_3','Incorrecto.', false)">Verbo</button>
-            <button onclick="checkAnswer('p14_3','Incorrecto.', false)">Pronombre</button>
+            <button onclick="checkAnswer('p13_3','¡Correcto! 🎉',true)">Adjetivo</button>
+            <button onclick="checkAnswer('p13_3','Incorrecto.',false)">Verbo</button>
+            <button onclick="checkAnswer('p13_3','Incorrecto.',false)">Pronombre</button>
           </div>
-          <div id="p14_3" class="result-msg"></div>
+          <div id="p13_3" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 4 -->
@@ -826,11 +910,11 @@
           <h3>Ejercicio 4</h3>
           <p>Es un adjetivo:</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p14_4','Incorrecto.', false)">Parque</button>
-            <button onclick="checkAnswer('p14_4','¡Correcto! 🎉', true)">Verde</button>
-            <button onclick="checkAnswer('p14_4','Incorrecto.', false)">Playa</button>
+            <button onclick="checkAnswer('p13_4','Incorrecto.',false)">Parque</button>
+            <button onclick="checkAnswer('p13_4','¡Correcto! 🎉',true)">Verde</button>
+            <button onclick="checkAnswer('p13_4','Incorrecto.',false)">Playa</button>
           </div>
-          <div id="p14_4" class="result-msg"></div>
+          <div id="p13_4" class="result-msg"></div>
         </div>
 
         <!-- Tarjeta 5 -->
@@ -838,48 +922,45 @@
           <h3>Ejercicio 5</h3>
           <p>Adjetivo que corresponde al sustantivo "niña":</p>
           <div class="options-row">
-            <button onclick="checkAnswer('p14_5','Incorrecto.', false)">azul</button>
-            <button onclick="checkAnswer('p14_5','Incorrecto.', false)">redonda</button>
-            <button onclick="checkAnswer('p14_5','¡Correcto! 🎉', true)">bonita</button>
+            <button onclick="checkAnswer('p13_5','Incorrecto.',false)">azul</button>
+            <button onclick="checkAnswer('p13_5','Incorrecto.',false)">redonda</button>
+            <button onclick="checkAnswer('p13_5','¡Correcto! 🎉',true)">bonita</button>
           </div>
-          <div id="p14_5" class="result-msg"></div>
+          <div id="p13_5" class="result-msg"></div>
         </div>
-
       </div>
       <div class="nav-buttons">
-        <button onclick="showPage('page13')">&laquo; Anterior</button>
-        <button onclick="showPage('page15')">Siguiente &raquo;</button>
+        <button onclick="showPage('page12')">&laquo; Anterior</button>
+        <button onclick="showPage('page14')">Siguiente &raquo;</button>
       </div>
     </section>
 
-    <!-- PÁGINA 15 (Antes 16) -->
-    <section id="page15" class="activity-page">
+    <!-- PÁGINA 14 (antes 15) -->
+    <section id="page14" class="activity-page">
       <div class="activity">
-        <h2>15. ¡Fin de actividades! <span>🎉</span></h2>
-        <p>¡Has llegado al final de estas 15 páginas! Repasa cada una cuando lo necesites.</p>
+        <h2>14. ¡Fin de actividades!</h2>
+        <p>¡Has llegado al final de estas 14 páginas! Repasa cada una cuando lo necesites.</p>
         <p><strong>¡Sigue aprendiendo!</strong></p>
       </div>
       <div class="nav-buttons">
-        <button onclick="showPage('page14')">&laquo; Anterior</button>
+        <button onclick="showPage('page13')">&laquo; Anterior</button>
       </div>
     </section>
 
   </div><!-- .container -->
 
   <footer>
-    <p>¡Sigue aprendiendo y divirtiéndote! <span style="font-size:1.3em;">📱🌈💡</span></p>
+    <p>¡Sigue aprendiendo y divirtiéndote! <span>📱🌈💡</span></p>
   </footer>
 
   <!-- SCRIPTS DE INTERACTIVIDAD -->
   <script>
     /***********************************************
-     * MOSTRAR/OCULTAR PÁGINAS
+     * MOSTRAR/OCULTAR PÁGINAS (VERSIÓN MÓVIL)
      ***********************************************/
     function showPage(pageId) {
       const pages = document.querySelectorAll('.activity-page');
-      pages.forEach(page => {
-        page.style.display = 'none';
-      });
+      pages.forEach(page => page.style.display = 'none');
       const currentPage = document.getElementById(pageId);
       if (currentPage) {
         currentPage.style.display = 'block';
@@ -887,11 +968,11 @@
       }
     }
     window.onload = () => {
-      showPage('page1');
+      showPage('page1'); // Comienza en la página 1
     };
 
     /***********************************************
-     * DRAG & DROP (Página 1)
+     * DRAG & DROP (Página 1 y Página 7)
      ***********************************************/
     const draggables = document.querySelectorAll(".draggable");
     const dropZones = document.querySelectorAll(".drop-zone");
@@ -923,25 +1004,23 @@
       e.preventDefault();
       const category = e.dataTransfer.getData("text/plain");
       const textId = e.dataTransfer.getData("text/id");
-      if (
+
+      // Lógica de validación
+      if(
         (category === "oficio" && e.currentTarget.id === "dropOficios") ||
-        (category === "profesion" && e.currentTarget.id === "dropProfesiones")
+        (category === "profesion" && e.currentTarget.id === "dropProfesiones") ||
+        (category === "pueblo" && e.currentTarget.id === "dropPueblo") ||
+        (category === "ciudad" && e.currentTarget.id === "dropCiudad")
       ) {
         e.currentTarget.innerHTML += `<p style='margin:0.3em;'>${textId} ✓</p>`;
       } else {
-        alert("Esa tarjeta no pertenece aquí. ¡Inténtalo de nuevo! ❌");
+        alert("Ese ítem no pertenece aquí. ¡Inténtalo de nuevo! ❌");
       }
     }
 
     /***********************************************
-     * CHECK ANSWER (tarjetas con botones)
-     ***********************************************/
-    /**
      * checkAnswer(resultDivId, message, isCorrect)
-     * resultDivId -> ID del <div> donde mostraremos el resultado
-     * message -> Mensaje a mostrar
-     * isCorrect -> Boolean, true si es la respuesta correcta
-     */
+     ***********************************************/
     function checkAnswer(resultDivId, message, isCorrect) {
       const div = document.getElementById(resultDivId);
       if (!div) return;
